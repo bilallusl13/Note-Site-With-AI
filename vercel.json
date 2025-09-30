@@ -1,21 +1,10 @@
 {
-  "name": "note-site-with-ai",
   "version": 2,
-  "public": false,
-  "github": {
-    "silent": true
-  },
-  "build": {
-    "env": {
-      "SKIP_ENV_VALIDATION": "1"
-    }
-  },
   "functions": {
     "app/api/**/*.ts": {
       "maxDuration": 30
     }
   },
-  "regions": ["fra1"],
   "env": {
     "JWT_SECRET": "@jwt_secret",
     "DATABASE_URL": "@database_url", 
