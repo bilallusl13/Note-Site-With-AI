@@ -1,0 +1,139 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model User {
+  id        String   @id @default(uuid())
+  email     String   @unique
+  password  String
+  name      String
+  photo     String?
+  role      String   @default("user") // "admin" veya "user"
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  notes    Note[]
+  comments Comment[]
+
+  noteLikes    NoteLike[] // <-- EKLENDİ
+  commentLikes CommentLike[] // <-- EKLENDİ
+  event        Event[]
+  usermessages  UserMessages[]
+  @@map("users")
+}
+
+model Note {
+  id        String   @id @default(uuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  text      String?  // Eski alan - geriye dönük uyumluluk için
+  content   String?  // Yeni alan - JSON string olarak saklanacak
+  header    String
+  isPublic  Boolean  @default(false)
+  isDeleted Boolean  @default(false)
+  classname String   @default("csci-101")
+
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId String
+
+  comments Comment[]
+  likes    Int       @default(0)
+
+  noteLikes NoteLike[]
+  eventId   String?
+  event     Event?  @relation(fields: [eventId], references: [id])
+
+  @@index([userId])
+  @@index([classname])
+  @@index([isPublic])
+  @@map("notes")
+}
+
+model Comment {
+  id        String   @id @default(uuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  text      String
+  likes     Int      @default(0)
+
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId String
+
+  note         Note          @relation(fields: [noteId], references: [id], onDelete: Cascade)
+  noteId       String
+  isPublic     Boolean
+  commentLikes CommentLike[]
+
+  @@unique([userId, noteId])
+  @@index([userId])
+  @@index([noteId])
+  @@map("comments")
+}
+
+model NoteLike {
+  id     String @id @default(uuid())
+  userId String
+  noteId String
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  note Note @relation(fields: [noteId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, noteId]) // bir kullanıcı aynı notu sadece 1 kez beğenir
+}
+
+model CommentLike {
+  id        String @id @default(uuid())
+  userId    String
+  commentId String
+
+  user    User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  comment Comment @relation(fields: [commentId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, commentId]) // bir kullanıcı aynı yorumu sadece 1 kez beğenir
+}
+
+model Event {
+  id          String   @id @default(uuid())
+  userId      String
+  title       String
+  color       String
+  description String
+  date        DateTime
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  notes       Note[]   // <-- EKLENDİ
+}
+
+model Trash {
+  id         String   @id @default(uuid())
+  noteId     String?  @unique
+  eventId    String?  @unique
+  noteHeader String?
+  eventTitle String?
+  deletedAt  DateTime @default(now())
+}
+
+model Notification {
+  id        String   @id @default(uuid())
+  userId    String   // Bildirimi alacak kişi
+  senderId  String   // Beğeniyi yapan kişi
+  noteId    String?  // Hangi not beğenildi (opsiyonel)
+  commentId String?  // Hangi yorum beğenildi (opsiyonel)
+  type      String   // 'like', 'comment', vs.
+  message   String
+  isRead    Boolean  @default(false)
+  createdAt DateTime @default(now())
+}
+
+model UserMessages {
+  id       String     @id @default(uuid())
+  message  String
+  userId   String?     // böyle bir alan var mı? (Int veya String olabilir)
+  // user ile ilişki varsa örnek:
+  user     User?    @relation(fields: [userId], references: [id])
+  createdAt DateTime @default(now())
+}

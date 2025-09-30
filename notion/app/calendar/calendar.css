@@ -1,0 +1,347 @@
+/* Calendar Container */
+.calendar-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 20px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Calendar Header */
+.calendar-header {
+  text-align: center;
+  margin-bottom: 30px;
+  color: white;
+}
+
+.calendar-header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.calendar-header p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  margin: 0;
+}
+
+/* Calendar Wrapper */
+.calendar-wrapper {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* FullCalendar Customization */
+.fc {
+  font-family: 'Inter', sans-serif;
+}
+
+.fc-toolbar {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  padding: 20px;
+  color: white;
+}
+
+.fc-toolbar-title {
+  font-size: 1.5rem !important;
+  font-weight: 600 !important;
+  color: white !important;
+}
+
+.fc-button {
+  background: rgba(255, 255, 255, 0.2) !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  color: white !important;
+  border-radius: 8px !important;
+  padding: 8px 16px !important;
+  font-weight: 500 !important;
+  transition: all 0.3s ease !important;
+}
+
+.fc-button:hover {
+  background: rgba(255, 255, 255, 0.3) !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+}
+
+.fc-button:focus {
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3) !important;
+}
+
+.fc-button-active {
+  background: rgba(255, 255, 255, 0.4) !important;
+  font-weight: 600 !important;
+}
+
+/* Calendar Grid */
+.fc-daygrid-day {
+  border: 1px solid #e5e7eb !important;
+  transition: all 0.2s ease;
+}
+
+.fc-daygrid-day:hover {
+  background-color: #f8fafc !important;
+  transform: scale(1.02);
+}
+
+.fc-daygrid-day-number {
+  font-weight: 500 !important;
+  color: #374151 !important;
+  padding: 8px !important;
+}
+
+.fc-day-today {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+}
+
+.fc-day-today .fc-daygrid-day-number {
+  color: white !important;
+  font-weight: 600 !important;
+}
+
+/* Events */
+.fc-event {
+  border-radius: 6px !important;
+  border: none !important;
+  padding: 4px 8px !important;
+  margin: 2px 0 !important;
+  font-size: 0.85rem !important;
+  font-weight: 500 !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+  transition: all 0.2s ease !important;
+}
+
+.fc-event:hover {
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15) !important;
+}
+
+.fc-event-title {
+  font-weight: 600 !important;
+}
+
+/* Week View */
+.fc-timegrid-slot {
+  border-color: #e5e7eb !important;
+}
+
+.fc-timegrid-slot-label {
+  color: #6b7280 !important;
+  font-weight: 500 !important;
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  backdrop-filter: blur(4px);
+}
+
+.modal-content {
+  background: white;
+  border-radius: 16px;
+  padding: 30px;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+  animation: modalSlideIn 0.3s ease-out;
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.modal-content h3 {
+  margin: 0 0 20px 0;
+  color: #1f2937;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #374151;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.form-group input[type="color"] {
+  width: 60px;
+  height: 40px;
+  padding: 4px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  margin-top: 30px;
+}
+
+.btn-primary,
+.btn-secondary {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.btn-secondary {
+  background: #f3f4f6;
+  color: #374151;
+}
+
+.btn-secondary:hover {
+  background: #e5e7eb;
+  transform: translateY(-1px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .calendar-container {
+    padding: 10px;
+  }
+  
+  .calendar-header h1 {
+    font-size: 2rem;
+  }
+  
+  .calendar-header p {
+    font-size: 1rem;
+  }
+  
+  .fc-toolbar {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .fc-toolbar-chunk {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .modal-content {
+    margin: 20px;
+    padding: 20px;
+  }
+  
+  .modal-actions {
+    flex-direction: column;
+  }
+  
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .calendar-wrapper {
+    background: #1f2937;
+  }
+  
+  .fc-daygrid-day {
+    border-color: #374151 !important;
+  }
+  
+  .fc-daygrid-day-number {
+    color: #d1d5db !important;
+  }
+  
+  .fc-daygrid-day:hover {
+    background-color: #374151 !important;
+  }
+  
+  .modal-content {
+    background: #1f2937;
+    color: #f9fafb;
+  }
+  
+  .modal-content h3 {
+    color: #f9fafb;
+  }
+  
+  .form-group label {
+    color: #d1d5db;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    background: #374151;
+    border-color: #4b5563;
+    color: #f9fafb;
+  }
+  
+  .btn-secondary {
+    background: #374151;
+    color: #d1d5db;
+  }
+  
+  .btn-secondary:hover {
+    background: #4b5563;
+  }
+} 
