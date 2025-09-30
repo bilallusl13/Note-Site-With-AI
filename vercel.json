@@ -1,5 +1,5 @@
 {
-  "name": "ai-notion-clone",
+  "name": "note-site-with-ai",
   "version": 2,
   "public": false,
   "github": {
@@ -11,16 +11,16 @@
     }
   },
   "functions": {
-    "app/api/**/*.ts": {
+    "notion/app/api/**/*.ts": {
       "maxDuration": 30
     }
   },
   "regions": ["fra1"],
   "framework": "nextjs",
-  "buildCommand": "cd notion && npm run build",
+  "buildCommand": "cd notion && npm install && npm run build",
   "outputDirectory": "notion/.next",
   "installCommand": "cd notion && npm install",
-  "rootDirectory": "./",
+  "rootDirectory": "notion",
   "env": {
     "JWT_SECRET": "@jwt_secret",
     "DATABASE_URL": "@database_url", 
