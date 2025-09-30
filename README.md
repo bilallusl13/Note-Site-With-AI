@@ -1,12 +1,10 @@
 
 
-# 🚀 **AI-Powered Notion Clone**
+# 🚀 **AI-Powered Note Site**
 
-[![Next.js](https://img.shields.io/badge/Next.js-14.2-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
-[![React](https://img.shields.io/badge/React-18.2-blue?style=for-the-badge&logo=react)](https://reactjs.org/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.4-blue?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
-[![Django](https://img.shields.io/badge/Django-5.2-green?style=for-the-badge&logo=django)](https://www.djangoproject.com/)
-[![AI](https://img.shields.io/badge/AI%20Powered-Gemini%202.5-orange?style=for-the-badge&logo=google)](https://ai.google.dev/)
+Try DEmo Version On Vercel:
+https://notion-5erifttej-bilals-projects-5afe78f4.vercel.app/
+
 
 > **Modern, AI-powered note-taking application.** A platform that combines Notion's powerful features with modern technologies and machine learning integration.
 
@@ -210,9 +208,6 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 **Bilal** - Software Engineering 2nd Year Student
 
-- GitHub: [@yourusername](https://github.com/yourusername)
-- LinkedIn: [Your LinkedIn](https://linkedin.com/in/yourprofile)
-- Email: your.email@example.com
 
 ## 🙏 **Acknowledgments**
 
@@ -220,7 +215,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 - [Prisma](https://prisma.io/) - Modern ORM
 - [Google GenAI](https://ai.google.dev/) - AI integration
 - [SentenceTransformers](https://www.sbert.net/) - Semantic analysis
-- [Vercel](https://vercel.com/) - Hosting platform
+-https://notion-5erifttej-bilals-projects-5afe78f4.vercel.app/ - Hosting platform
 
 ---
 
