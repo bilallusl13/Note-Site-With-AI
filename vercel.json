@@ -1,0 +1,29 @@
+{
+  "name": "ai-notion-clone",
+  "version": 2,
+  "public": false,
+  "github": {
+    "silent": true
+  },
+  "build": {
+    "env": {
+      "SKIP_ENV_VALIDATION": "1"
+    }
+  },
+  "functions": {
+    "app/api/**/*.ts": {
+      "maxDuration": 30
+    }
+  },
+  "regions": ["fra1"],
+  "framework": "nextjs",
+  "buildCommand": "cd notion && npm run build",
+  "outputDirectory": "notion/.next",
+  "installCommand": "cd notion && npm install",
+  "rootDirectory": "./",
+  "env": {
+    "JWT_SECRET": "@jwt_secret",
+    "DATABASE_URL": "@database_url", 
+    "GEMINI_API_KEY": "@gemini_api_key"
+  }
+}
