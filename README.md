@@ -1,3 +1,5 @@
+
+
 # 🚀 **AI-Powered Notion Clone**
 
 [![Next.js](https://img.shields.io/badge/Next.js-14.2-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
@@ -6,30 +8,30 @@
 [![Django](https://img.shields.io/badge/Django-5.2-green?style=for-the-badge&logo=django)](https://www.djangoproject.com/)
 [![AI](https://img.shields.io/badge/AI%20Powered-Gemini%202.5-orange?style=for-the-badge&logo=google)](https://ai.google.dev/)
 
-> **Modern, AI-destekli not alma uygulaması.** Notion'un güçlü özelliklerini modern teknolojilerle buluşturan, makine öğrenmesi entegrasyonlu platform.
+> **Modern, AI-powered note-taking application.** A platform that combines Notion's powerful features with modern technologies and machine learning integration.
 
-## ✨ **Özellikler**
+## ✨ **Features**
 
-### 🎯 **Temel Özellikler**
-- 📝 **Rich Text Editor** - TipTap ve BlockNote ile gelişmiş metin editörü
-- 🗂️ **Organizasyon** - Notları sınıflara göre düzenleme
-- 🔐 **Güvenli Kimlik Doğrulama** - JWT tabanlı login/register sistemi
-- 🗃️ **Veritabanı Yönetimi** - Prisma ORM ile güçlü veri yönetimi
-- 📱 **Responsive Tasarım** - Tüm cihazlarda mükemmel deneyim
+### 🎯 **Core Features**
+- 📝 **Rich Text Editor** - Advanced text editor with TipTap and BlockNote
+- 🗂️ **Organization** - Organize notes by classes/categories
+- 🔐 **Secure Authentication** - JWT-based login/register system
+- 🗃️ **Database Management** - Powerful data management with Prisma ORM
+- 📱 **Responsive Design** - Perfect experience on all devices
 
-### 🤖 **AI & ML Özellikleri**
-- 💬 **AI Asistan** - Google Gemini 2.5 Flash entegrasyonu
-- 🧠 **Akıllı Öneriler** - SentenceTransformers ile semantik analiz
-- 📊 **Konu Önerisi** - 50+ kategori için makine öğrenmesi destekli öneriler
-- 🔄 **Real-time Chat** - AI ile anlık sohbet deneyimi
+### 🤖 **AI & ML Features**
+- 💬 **AI Assistant** - Google Gemini 2.5 Flash integration
+- 🧠 **Smart Recommendations** - Semantic analysis with SentenceTransformers
+- 📊 **Topic Suggestions** - ML-powered recommendations for 50+ categories
+- 🔄 **Real-time Chat** - Instant chat experience with AI
 
-### 🎨 **Gelişmiş UI/UX**
-- ✨ **Animasyonlar** - Karşılama efektleri ve confetti
-- 🎯 **Motivasyonel Öğeler** - Kullanıcı deneyimini geliştiren etkileşimler
-- 🌙 **Dark/Light Mode** - Göz yormayan tema desteği
-- 📅 **Takvim Entegrasyonu** - Etkinlik ve not yönetimi
+### 🎨 **Advanced UI/UX**
+- ✨ **Animations** - Welcome effects and confetti
+- 🎯 **Motivational Elements** - User experience enhancing interactions
+- 🌙 **Dark/Light Mode** - Eye-friendly theme support
+- 📅 **Calendar Integration** - Event and note management
 
-## 🏗️ **Mimari**
+## 🏗️ **Architecture**
 
 ```mermaid
 graph TB
@@ -42,7 +44,7 @@ graph TB
     G --> H[SentenceTransformers]
 ```
 
-## 🛠️ **Teknoloji Stack'i**
+## 🛠️ **Tech Stack**
 
 ### **Frontend**
 - **Framework**: Next.js 14.2 (App Router)
@@ -63,32 +65,32 @@ graph TB
 - **Model**: all-MiniLM-L6-v2
 - **Analysis**: Semantic similarity, topic recommendation
 
-## 🚀 **Kurulum**
+## 🚀 **Installation**
 
-### **Gereksinimler**
+### **Requirements**
 - Node.js 18+
 - Python 3.9+
-- npm veya yarn
+- npm or yarn
 
-### **1. Repository'yi klonlayın**
+### **1. Clone the repository**
 ```bash
 git clone https://github.com/yourusername/ai-notion-clone.git
 cd ai-notion-clone
 ```
 
-### **2. Frontend Kurulumu (Next.js)**
+### **2. Frontend Setup (Next.js)**
 ```bash
 cd notion
 npm install
 ```
 
 ### **3. Environment Variables**
-`.env` dosyası oluşturun:
+Create `.env` file:
 ```bash
 cp .env.example .env
 ```
 
-Gerekli API anahtarlarını ekleyin:
+Add required API keys:
 ```env
 JWT_SECRET=your-super-secret-jwt-key
 DATABASE_URL="file:./dev.db"
@@ -101,19 +103,19 @@ npx prisma generate
 npx prisma db push
 ```
 
-### **5. ML Backend Kurulumu (Django)**
+### **5. ML Backend Setup (Django)**
 ```bash
 cd ../mlproject
 python -m venv venv
 source venv/bin/activate  # Linux/Mac
-# veya
+# or
 venv\Scripts\activate     # Windows
 
 pip install -r requirements.txt
 python manage.py migrate
 ```
 
-### **6. Uygulamayı Çalıştırın**
+### **6. Run the Application**
 
 **Frontend (Port 3000):**
 ```bash
@@ -129,93 +131,97 @@ python manage.py runserver
 
 ## 📊 **Database Schema**
 
-### **Ana Tablolar**
-- **User** - Kullanıcı bilgileri ve kimlik doğrulama
-- **Note** - Notlar, içerik ve metadata
-- **Comment** - Yorum sistemi
-- **Event** - Takvim etkinlikleri
-- **Notification** - Bildirim sistemi
-- **UserMessages** - AI chat geçmişi
+### **Main Tables**
+- **User** - User information and authentication
+- **Note** - Notes, content and metadata
+- **Comment** - Comment system
+- **Event** - Calendar events
+- **Notification** - Notification system
+- **UserMessages** - AI chat history
 
 ## 🔌 **API Endpoints**
 
 ### **Authentication**
-- `POST /api/login` - Kullanıcı girişi
-- `POST /api/register` - Kullanıcı kaydı
-- `PUT /api/updatepassword` - Şifre güncelleme
+- `POST /api/login` - User login
+- `POST /api/register` - User registration
+- `PUT /api/updatepassword` - Password update
 
 ### **Notes**
-- `GET /api/notes/allnotes` - Tüm notları getir
-- `POST /api/notes/savenote` - Not kaydet
-- `DELETE /api/notes/deletenote` - Not sil
-- `PUT /api/notes/updatenote` - Not güncelle
+- `GET /api/notes/allnotes` - Get all notes
+- `POST /api/notes/savenote` - Save note
+- `DELETE /api/notes/deletenote` - Delete note
+- `PUT /api/notes/updatenote` - Update note
 
 ### **AI Services**
-- `POST /api/aiserver/submitmessage` - AI'a mesaj gönder
-- `GET /api/aiserver/getallmessages` - Chat geçmişi
+- `POST /api/aiserver/submitmessage` - Send message to AI
+- `GET /api/aiserver/getallmessages` - Chat history
 
 ### **ML Recommendations**
-- `POST /recommender/analyze/` - Mesaj analizi ve konu önerisi
+- `POST /recommender/analyze/` - Message analysis and topic suggestions
 
-## 🌟 **Öne Çıkan Özellikler**
+## 🌟 **Key Features**
 
-### **AI Asistan**
+### **AI Assistant**
 ```typescript
-// AI ile sohbet örneği
+// AI chat example
 const response = await fetch('/api/aiserver/submitmessage', {
   method: 'POST',
   headers: { 'Content-Type': 'application/json' },
-  body: JSON.stringify({ message: 'Python hakkında not almak istiyorum' })
+  body: JSON.stringify({ message: 'I want to take notes about Python' })
 });
 ```
 
-### **Konu Önerisi Sistemi**
+### **Topic Recommendation System**
 ```python
-# Semantic analiz ile konu önerisi
+# Semantic analysis for topic suggestions
 messages = ["machine learning", "python", "data science"]
 recommendations = model.analyze_messages(messages)
-# Output: ["teknoloji", "programlama", "veri bilimi"]
+# Output: ["technology", "programming", "data science"]
 ```
 
-## 🔒 **Güvenlik**
+## 🔒 **Security**
 
-- **JWT Authentication** - Güvenli token tabanlı kimlik doğrulama
-- **Password Hashing** - bcrypt ile şifre güvenliği
-- **Input Validation** - Zod ile veri doğrulama
-- **CORS Protection** - Cross-origin isteklerin kontrolü
+- **JWT Authentication** - Secure token-based authentication
+- **Password Hashing** - Password security with bcrypt
+- **Input Validation** - Data validation with Zod
+- **CORS Protection** - Cross-origin request control
 
 ## 📱 **Demo**
 
 🌐 **Live Demo**: [https://your-app.vercel.app](https://your-app.vercel.app)
 
-### **Demo Hesap**
+### **Demo Account**
 - **Email**: demo@example.com
 - **Password**: demo123
 
-## 🤝 **Katkıda Bulunma**
+## 🤝 **Contributing**
 
-1. Fork edin
-2. Feature branch oluşturun (`git checkout -b feature/amazing-feature`)
-3. Commit edin (`git commit -m 'Add amazing feature'`)
-4. Push edin (`git push origin feature/amazing-feature`)
-5. Pull Request açın
+1. Fork the project
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-## 📄 **Lisans**
+## 📄 **License**
 
-Bu proje MIT lisansı altında lisanslanmıştır. Detaylar için [LICENSE](LICENSE) dosyasına bakın.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-## 👨‍💻 **Geliştirici**
+## 👨‍💻 **Developer**
 
-**Bilal** - Yazılım Mühendisliği 2. Sınıf Öğrencisi
+**Bilal** - Software Engineering 2nd Year Student
 
-## 🙏 **Teşekkürler**
+- GitHub: [@yourusername](https://github.com/yourusername)
+- LinkedIn: [Your LinkedIn](https://linkedin.com/in/yourprofile)
+- Email: your.email@example.com
 
-- [Next.js](https://nextjs.org/) - Harika React framework'ü
+## 🙏 **Acknowledgments**
+
+- [Next.js](https://nextjs.org/) - Amazing React framework
 - [Prisma](https://prisma.io/) - Modern ORM
-- [Google GenAI](https://ai.google.dev/) - AI entegrasyonu
+- [Google GenAI](https://ai.google.dev/) - AI integration
 - [SentenceTransformers](https://www.sbert.net/) - Semantic analysis
 - [Vercel](https://vercel.com/) - Hosting platform
 
 ---
 
-⭐ **Bu projeyi beğendiyseniz yıldız vermeyi unutmayın!** ⭐
+⭐ **If you like this project, don't forget to give it a star!** ⭐
