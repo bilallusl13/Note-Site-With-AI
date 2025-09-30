@@ -787,7 +787,7 @@ const Page = () => {
                         <span className="text-xs text-blue-300 font-semibold">Bu nota yapılan yorum:</span>
                       </div>
                       <div className="ml-6">
-                        <h6 className="text-sm font-bold text-white mb-1">"{user.comment.note?.header || 'Başlık bulunamadı'}"</h6>
+                        <h6 className="text-sm font-bold text-white mb-1">&quot;{user.comment.note?.header || 'Başlık bulunamadı'}&quot;</h6>
                         <p className="text-xs text-white/70 italic line-clamp-2">
                           {user.comment.note?.text || user.comment.note?.content ? 
                             (user.comment.note.text || user.comment.note.content).slice(0, 80) + '...' : 

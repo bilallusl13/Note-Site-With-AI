@@ -341,7 +341,7 @@ export default function TemplatesPage() {
     }
   };
 
-  const useTemplate = (template: Template) => {
+  const handleUseTemplate = (template: Template) => {
     // Not oluşturma sayfasına şablon içeriği ile yönlendirme
     const templateData = {
       title: template.title,
@@ -426,7 +426,7 @@ export default function TemplatesPage() {
 
                 <div className="flex gap-2">
                   <button
-                    onClick={() => useTemplate(template)}
+                    onClick={() => handleUseTemplate(template)}
                     className="flex-1 bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 text-white px-4 py-2 rounded-lg font-medium transition-all flex items-center justify-center gap-2"
                   >
                     <Star className="w-4 h-4" />

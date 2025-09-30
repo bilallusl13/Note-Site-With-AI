@@ -540,7 +540,7 @@ const NoteDetailModal: React.FC<NoteDetailModalProps> = ({ noteId, isOpen, onClo
                 {(userRole === "admin" || currentUserId === data?.userId) && (
                   <>
                      <Button onClick={()=>handleMakePDF(data?.header,data?.text)} variant="solid" className="bg-gradient-to-br from-yellow-500 to-green-700 text-white rounded-lg px-4 py-2 font-medium mr-2">
-                      PDF'e Dönüştür
+                      PDF&apos;e Dönüştür
                     </Button>
                     <Button onClick={handleEditNote} variant="solid" className="bg-blue-600 hover:bg-blue-700 text-white rounded-lg px-4 py-2 font-medium mr-2">
                       Düzenle
